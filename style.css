@@ -7,6 +7,9 @@
     margin:2%
 }
 #c_body{
+    display: flex;
+    flex-direction:left;
+  left:0px;
     justify-content: center;
     margin: 2%;
     padding: 2%;
