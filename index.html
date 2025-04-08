@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musical repo</title>
-
+    <script src="myScript.js"></script>
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -40,34 +40,20 @@
 
     </div>
     <div id="footer">
-        <div class="item1">
-            <form>
-                <div>
-                    <div><label> name </label></div>
-                    <div><input type="text"></input></div>
-                </div>
 
-                <div>
-                    <div><label> comment </label></div>
-                    <div><input class="hj" type="text"></input></div>
-                </div>
+<div class="comment-box">
+    <h2>Leave a Comment</h2>
+    <input type="text" id="name" placeholder="Your name" />
+    <textarea id="comment" placeholder="Your comment" rows="4"></textarea>
+    <button onclick="postComment()">Post Comment</button>
 
-                <div class="uio"> <input  type="submit" value="submit form"></div>
-
-
-            </form>
-        </div>
-
-        <div class="item2"><div id="canvas-container"></div></div>
-
-        <!-- <div id="circle">
-            
-        </div> -->
+    <div class="comment-list" id="commentList"></div>
+  </div>
+        
 
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
-    <script src="sketch.js"></script>
+    
 
 
 </body>
