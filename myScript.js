@@ -7,7 +7,7 @@ async function postComment() {
       return;
     }
 
-    const response = await fetch('/submit', {
+    const response = await fetch('https://music-1-7jj4.onrender.com/submit', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ name, comment })
@@ -22,7 +22,7 @@ async function postComment() {
   }
 
   async function loadComments() {
-    const res = await fetch('/comments');
+    const res = await fetch('https://music-1-7jj4.onrender.com/comments');
     const data = await res.json();
     const container = document.getElementById('commentList');
     container.innerHTML = '';
