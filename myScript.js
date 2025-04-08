@@ -1,3 +1,11 @@
+const BACKEND_URL = 'https://music-1-7jj4.onrender.com';
+
+
+
+
+
+
+
 async function postComment() {
     const name = document.getElementById('name').value.trim();
     const comment = document.getElementById('comment').value.trim();
@@ -7,11 +15,12 @@ async function postComment() {
       return;
     }
 
-    const response = await fetch('https://music-1-7jj4.onrender.com/submit', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ name, comment })
-    });
+  const response = await fetch(`${BACKEND_URL}/submit`, {
+  method: 'POST',
+  headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify({ name, comment })
+});
+
 
     const result = await response.json();
     if (result.status === 'success') {
@@ -22,7 +31,7 @@ async function postComment() {
   }
 
   async function loadComments() {
-    const res = await fetch('https://music-1-7jj4.onrender.com/comments');
+    const res = await fetch(`${BACKEND_URL}/comments`);
     const data = await res.json();
     const container = document.getElementById('commentList');
     container.innerHTML = '';
