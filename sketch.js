@@ -14,7 +14,7 @@ function draw() {
     stroke(random(0,255),random(0,255),random(0,255));
      noFill();
     
-    arc(400, 400,400,100*PI*sin(fiba[frameCount]),PI*sin(fiba[frameCount]) ,PI*sin(fiba[frameCount-1]) )
+    arc(400, 200,400,100*PI*sin(fiba[frameCount]),PI*sin(fiba[frameCount]) ,PI*sin(fiba[frameCount-1]) )
   
     
  
