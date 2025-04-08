@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musical repo</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
@@ -15,9 +14,7 @@
 <body>
     <div id="header">Music Repo</div>
     <div id="c_body">
-        <div>
-           
-        </div>
+
         <div>
             <h6> Music that flow through my study table </h6>
             <audio controls>
@@ -27,7 +24,7 @@
             </audio>
         </div>
 
-        <br>
+
         <div>
             <h6>58 min symphony from balcony </h6>
 
@@ -43,7 +40,7 @@
 
     </div>
     <div id="footer">
-        <div>
+        <div class="item1">
             <form>
                 <div>
                     <div><label> name </label></div>
@@ -55,18 +52,22 @@
                     <div><input class="hj" type="text"></input></div>
                 </div>
 
+                <div class="uio"> <input  type="submit" value="submit form"></div>
 
-                <input type="submit" value="submit form">
 
             </form>
         </div>
+
+        <div class="item2"><div id="canvas-container"></div></div>
+
         <!-- <div id="circle">
-            <script src="sketch.js"></script>
+            
         </div> -->
 
-
-
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+    <script src="sketch.js"></script>
 
 
 </body>

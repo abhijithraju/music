@@ -1,5 +1,7 @@
 function setup() {
-  createCanvas(800, 800);
+  let canvas = createCanvas(400, 400);
+  canvas.position(800,370);
+  canvas.parent('canvas-container');
   frameRate(10);
   // background(220);
 }
@@ -14,7 +16,7 @@ function draw() {
     stroke(random(0,255),random(0,255),random(0,255));
      noFill();
     
-    arc(400, 200,400,100*PI*sin(fiba[frameCount]),PI*sin(fiba[frameCount]) ,PI*sin(fiba[frameCount-1]) )
+    arc(100, 200,200,50*PI*sin(fiba[frameCount]),PI*sin(fiba[frameCount]) ,PI*sin(fiba[frameCount-1]) )
   
     
  
