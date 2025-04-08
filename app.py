@@ -1,19 +1,17 @@
-from flask import Flask, request, jsonify, render_template
-from flask_cors import CORS
+from flask import Flask, request, render_template, jsonify
 from openpyxl import Workbook, load_workbook
 from datetime import datetime
 import os
 
 app = Flask(__name__)
-CORS(app)
 
 EXCEL_FILE = 'comments.xlsx'
 
-# Create Excel file with headers if it doesn't exist
+# Create Excel file if not exists
 if not os.path.exists(EXCEL_FILE):
     wb = Workbook()
     ws = wb.active
-    ws.append(['Name', 'Comment', 'Timestamp'])
+    ws.append(["Name", "Comment", "Timestamp"])
     wb.save(EXCEL_FILE)
 
 @app.route('/')
@@ -23,12 +21,9 @@ def index():
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.json
-    name = data.get('name', '').strip()
-    comment = data.get('comment', '').strip()
+    name = data.get('name')
+    comment = data.get('comment')
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-    if not name or not comment:
-        return jsonify({'status': 'error', 'message': 'Missing fields'}), 400
 
     wb = load_workbook(EXCEL_FILE)
     ws = wb.active
@@ -38,7 +33,7 @@ def submit():
     return jsonify({'status': 'success', 'timestamp': timestamp})
 
 @app.route('/comments')
-def comments():
+def get_comments():
     wb = load_workbook(EXCEL_FILE)
     ws = wb.active
     comments = []
